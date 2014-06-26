@@ -1,3 +1,4 @@
+// helper function which calls the search highlight and then adds markers to sidebar for each search result
 function buildsb(keyword) {
 	console.log("starting...");
 	var st = new Date().getTime();
@@ -21,6 +22,7 @@ function buildsb(keyword) {
 	st=et;
 }
 
+// this function will find and hightlight all the matching text in our document
 function find_string(container,what,spanClass) {		
 	var el = $(container)[0],
 		content = el.innerHTML,
@@ -45,7 +47,8 @@ function find_string(container,what,spanClass) {
 	el.innerHTML = output;		
 	return counter;
 }
-	
+
+// start it on load	
 $(document).ready(function() {
-	buildsb("naive");
+	buildsb("test");
 });
