@@ -4,17 +4,17 @@
 	
 	$.fn.scrollIndicatorBar = function (options) {
 		var settings = $.extend({
-      // These are the defaults.
-      barColor: "#556b2f",
+      			// These are the defaults.
+      			barColor: "#556b2f",
 			markerColor: "red",
-      container: "document.body",
+      			container: "document.body",
 			topSpace: "0px",
 			bottomSpace: "0px",
 			clickable: true,
 			hoverable: true,
 			append: true
-    }, options );
-		
+    		}, options );
+			
 		var page_height = get_height();
 		var sbar = $("<div id='search_bar'></div>");
 		sbar.css('top', settings.topSpace).css('bottom', settings.bottomSpace);
