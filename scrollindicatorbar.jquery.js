@@ -4,17 +4,17 @@
 	
 	$.fn.scrollIndicatorBar = function (options) {
 		var settings = $.extend({
-      			// These are the defaults.
-      			barColor: "#556b2f",
+            		// These are the defaults.
+            		barColor: "#556b2f",
 			markerColor: "red",
-      			container: "document.body",
+            		container: "document.body",
 			topSpace: "0px",
 			bottomSpace: "0px",
 			clickable: true,
 			hoverable: true,
 			append: true
-    		}, options );
-			
+        	}, options );
+		
 		var page_height = get_height();
 		var sbar = $("<div id='search_bar'></div>");
 		sbar.css('top', settings.topSpace).css('bottom', settings.bottomSpace);
@@ -25,8 +25,8 @@
 		
 		if (settings.clickable)
 			sbar.on("click", ".marker", function() {
-				var n = $(this).data("el");
-				go_to(n);
+				var n = $(this).data("nr");
+				markers[n].scrollIntoView();
 			});
 			
 		if (settings.hoverable) {
@@ -41,6 +41,8 @@
 		
 		var page_height = get_height();
 		var cnt = 0;
+		var markers = [];
+		
 		sbar.addMarker = function(element, options) {
 			var cfg = $.extend({
 				// These are the defaults.
@@ -49,10 +51,12 @@
 				hoverable: settings.hoverable
 			}, options );
 			
-			var result = $(element);
-			var pos = result.offset().top;
-			cnt++;
-			sbar.append("<div class='marker' data-el='"+element+"' data-nr='"+cnt+"' style='color: "+cfg.markerColor+";top:"+(100*pos/page_height)+"%' />");
+			var results = $(element);
+			$.each(results, function(result) {
+				var pos = $(this).offset().top;
+				markers.push(this);
+				sbar.append("<div class='marker' data-nr='"+(cnt++)+"' style='color: "+cfg.markerColor+";top:"+(100*pos/page_height)+"%' />");
+			});
 		}
 		
 		return sbar;
@@ -65,13 +69,6 @@
 
 		var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
 		return height;
-	}
-	
-  	function go_to(el) {
-		var doc = $(el);
-		if (doc.length != 0) {
-			doc[0].scrollIntoView();
-		}
 	}
  
 }( jQuery ));
