@@ -41,8 +41,9 @@ $.fn.scrollIndicatorBar(options) accepts the following options (which need to be
 
 Helper functions:
 
-there are few helper functions added to help you doing some common tasks:
-
+there are few helper functions added to help you get started: (in file helper.js)
+- find_string: searches for a string in a page and hightlights all occurances
+- buildsb: calls the find_string then adds a marker to bar for each match
 
 
 TODO:
