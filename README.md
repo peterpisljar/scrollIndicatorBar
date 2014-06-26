@@ -47,4 +47,7 @@ there are few helper functions added to help you get started: (in file helper.js
 
 
 TODO:
-
+- test with all browsers
+- optimize for speed
+- optimize the looks
+- add some more options 
