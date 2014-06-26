@@ -67,7 +67,7 @@
 		return height;
 	}
 	
-  function go_to(el) {
+  	function go_to(el) {
 		var doc = $(el);
 		if (doc.length != 0) {
 			doc[0].scrollIntoView();
