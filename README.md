@@ -43,6 +43,7 @@ Helper functions:
 
 there are few helper functions added to help you get started: (in file helper.js)
 - find_string: searches for a string in a page and hightlights all occurances
+    = dont use this in production. this function is extremely slow. if you want this functionality look at jquery.highlight
 - buildsb: calls the find_string then adds a marker to bar for each match
 
 
