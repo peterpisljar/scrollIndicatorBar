@@ -1,0 +1,21 @@
+#search_bar {
+	position: fixed;
+	width: 15px;
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	background-color: blue;
+}
+
+#search_bar .marker {
+	background-color: red;
+	position: absolute;
+	width: 15px;
+	height: 1px;
+	cursor: pointer;
+}
+
+#search_bar .marker.hover {
+	font-weight: bold;
+	background-color: yellow;
+}
